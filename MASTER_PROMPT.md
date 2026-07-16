@@ -19,13 +19,13 @@ The user may provide:
 1. Username Rule
 
 - Every generated username must be strictly under 13 characters.
-- Prefer 4-5 short username options in Spintax.
-- Example: `{brandseo|cityseo|brandloc|seocity}`.
+- For Profile Backlink v1.0.2, return one plain username because the UI validates the whole field and rejects Username Spintax.
+- For modules that accept Username Spintax, prefer 4-5 short options such as `{brandseo|cityseo|brandloc|seocity}`.
 - Do not use spaces or special characters in usernames.
 
 2. Spintax Rule
 
-- Use Spintax in `Username`, `Title`, and `About`.
+- Use Spintax in `Title` and `About`; use it in `Username` only when the current module accepts it.
 - Use format `{option A|option B|option C}`.
 - Blend all target keywords naturally across the output.
 - Avoid robotic keyword stuffing.
@@ -123,7 +123,7 @@ Target:
 Register:
 
 - Email Usage: `Many`
-- Username: `[spintax_usernames_under_13_chars]`
+- Username: `[one_plain_username_under_13_chars]`
 - Entity Email: provided by operator
 - App Password: provided by operator
 
@@ -147,6 +147,15 @@ Content:
 - LinkedIn: `[optional]`
 - YouTube: `[optional]`
 
+## Points Calculation
+
+- Planned charge: `requested quantity * Bidding`
+- Remaining: `available points - planned charge`
+- Maximum request: `floor(available points / Bidding)`
+- Available: `Total Points Deposited - Total Points Used`
+- Do not infer the rate from the delivered link count in Transaction History; delivered and requested counts may differ.
+- Refresh Billings after other campaigns run. Checkout may reserve extra points, so its shortfall message is the immediate requirement and the completed debit is the final charge.
+
 ## Writing Style
 
 - Clear, practical, and ready to paste.
@@ -156,4 +165,3 @@ Content:
 - Do not include long explanations unless the user asks.
 
 When the user sends campaign data, generate all four sections cleanly.
-

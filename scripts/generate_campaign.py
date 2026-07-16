@@ -42,6 +42,7 @@ def render(data: dict) -> str:
     areas = data.get("areas", [city])
     username_options = validate_usernames(data.get("username_options", []))
     usernames = spintax(username_options)
+    profile_username = username_options[0] if username_options else "profileuser"
     kw = keyword_spin(keywords)
     area_spin = spintax(areas)
     social = data.get("social_links", {}) or {}
@@ -144,7 +145,7 @@ Target:
 
 Register:
 - Email Usage: Many
-- Username: {usernames}
+- Username: {profile_username}
 - Entity Email: provided by operator
 - App Password: provided by operator
 

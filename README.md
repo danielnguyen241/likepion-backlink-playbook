@@ -33,11 +33,33 @@ Not a fit:
 ## Core Rules
 
 1. Username must be under 13 characters.
-2. Use Spintax for usernames, titles, and About fields.
-3. Keep NAP data consistent across tabs: business name, phone, address, city.
-4. Include all target keywords naturally across the About fields.
-5. Keep public examples generic. Do not commit real credentials.
-6. For local SEO, include city, nearby suburbs, map/search intent, and service relevance.
+2. Profile Backlink v1.0.2 requires one plain username; use Username Spintax only where the current module accepts it.
+3. Use Spintax for titles and About fields.
+4. Keep NAP data consistent across tabs: business name, phone, address, city.
+5. Include all target keywords naturally across the About fields.
+6. Keep public examples generic. Do not commit real credentials.
+7. For local SEO, include city, nearby suburbs, map/search intent, and service relevance.
+
+## Points Calculator
+
+LikePion v1.0.2 completed transactions show this planning formula:
+
+```text
+planned charge = requested quantity * bidding
+remaining = available points - planned charge
+maximum request = floor(available points / bidding)
+available points = deposited points - used points
+```
+
+Observed examples:
+
+- Podcast: 200 requested x 45 = 9,000 points
+- Profile: 300 requested x 30 = 9,000 points; report returned 279 links
+- Profile: 100 requested x 30 = 3,000 points; report returned 114 links
+- Blog 2.0: 20 accounts x 50 = 1,000 points
+- Google Stacking: 10 links x 30 = 300 points
+
+Do not calculate the rate from the delivered link count shown in the transaction description. Delivered links can differ from the requested limit. Refresh Billings after another campaign runs, and treat a checkout shortfall message as the immediate balance requirement because the app may reserve extra points.
 
 ## Quick Start
 
@@ -59,6 +81,7 @@ The script prints copy-ready sections for Podcast, Blog20, Google Stacking, and 
 
 ## Files
 
+- `SKILL.md` - installable Codex skill with field rules and points calculator.
 - `MASTER_PROMPT.md` - one prompt to teach another AI how to generate LikePion campaign data.
 - `templates/campaign.example.yaml` - safe example campaign input.
 - `scripts/generate_campaign.py` - simple generator for structured campaign output.
@@ -82,4 +105,3 @@ rg -n "password|app password|2fa|secret|token|api[_-]?key|gho_|sk-" .
 ```
 
 Never commit customer credentials, private emails, API keys, or 2FA recovery data.
-
